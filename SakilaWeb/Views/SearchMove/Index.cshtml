@@ -1,0 +1,17 @@
+@model SakilaWeb.Models.SearchMoveViewModel
+
+<form asp-controller="SearchMove" asp-action="Index" method="POST">
+    <div class="form-group">
+        <label>Codigo</label>
+        <input type="number" class="form-control" asp-for="codigo" />
+    </div>
+    <input type="submit" value="Procurar" />
+    <h4>
+        Resultado:
+        @if (Model != null ) {
+            <span>@Model.move</span>
+        }
+    </h4>
+
+    
+</form>

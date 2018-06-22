@@ -32,3 +32,4 @@ C:\Users\ADM\SakilaWeb\obj\Debug\netcoreapp2.1\SakilaWeb.pdb
 C:\Users\ADM\SakilaWeb\obj\Debug\netcoreapp2.1\SakilaWeb.csproj.CopyComplete
 C:\Users\ADM\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Hello\HelloWorld.g.cshtml.cs
 C:\Users\ADM\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Calc\Index.g.cshtml.cs
+C:\Users\ADM\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\SearchMove\Index.g.cshtml.cs
