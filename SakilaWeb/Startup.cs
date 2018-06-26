@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using SakilaWeb.DB;
+using SakilaWeb.Service;
 
 namespace SakilaWeb
 {
@@ -33,6 +36,10 @@ namespace SakilaWeb
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<SakilaDbContext>(options => options.UseMySql(Configuration.GetConnectionString("sakila")));
+
+            services.AddScoped(typeof(FilmService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +63,7 @@ namespace SakilaWeb
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Film}/{action=List}/{id?}");
             });
         }
     }

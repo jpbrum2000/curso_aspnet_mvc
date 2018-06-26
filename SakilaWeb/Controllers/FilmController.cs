@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using SakilaWeb.DB.Models;
 using SakilaWeb.Models;
+using SakilaWeb.Service;
 
 namespace SakilaWeb.Controllers {
-    public class FilmController : Controller{
+    
+    public class FilmController : Controller
+    {
+        private FilmService filmService;
+        public FilmController(FilmService filmService){
+            this.filmService = filmService;
+        }
         public IActionResult Index(){
             var userModel = new FilmViewModel();
             return View(userModel);
@@ -13,35 +20,20 @@ namespace SakilaWeb.Controllers {
 
         [HttpPost]
         public IActionResult Index(FilmViewModel model){
-            switch(model.codigo) {
-                case 1: model.move = "Vingadores";
-                break;
-                case 2: model.move = "Harry Potter";
-                break;
-                case 3: model.move = "Logan";
-                break;
-                default: model.move = "Filme não Existe";
-                break;
+            
+            Film f = filmService.findById(int.Parse(model.codigo.ToString()));
+            if (f == null){
+                model.move = "Filme não Existe";
             } 
+            else {
+                model.move = f.Title;
+            }            
+
             return View(model);
         }
         public IActionResult List() {
            
-                Func<List<Film>> fakeList = () => 
-                {
-                    List<Film> list = new List<Film>();
-                    list.Add(new Film()
-                    {
-                        Id = 1,
-                        Title = "Vingadores"
-                    });
-                    list.Add(new Film (){
-                        Id = 2,
-                        Title = "Harry Potter"
-                    });
-                    return list;
-                };
-                List<Film> filmsList = fakeList();
+                List<Film> filmsList = filmService.listAll();
                 return View(filmsList);
         }
     }
