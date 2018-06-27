@@ -21,11 +21,17 @@ namespace SakilaWeb.Service {
         }
         
         public List<Film> listAll(){
-            return (from f in dbContext.Films select f).ToList<Film>();
+            try {
+                return dbContext.Films.ToList();
+                //return (from f in dbContext.Films select f).ToList<Film>();
+            }
+            catch {
+                return(new List<Film>());
+            }
         }
 
-        public Film findById(int id) {
-            return (from f in dbContext.Films where f.Id == id select f).FirstOrDefault();
+        public Film findById(int? id) {
+            return dbContext.Films.Find(id);
         }
     }
 }

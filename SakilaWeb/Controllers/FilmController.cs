@@ -4,37 +4,40 @@ using Microsoft.AspNetCore.Mvc;
 using SakilaWeb.DB.Models;
 using SakilaWeb.Models;
 using SakilaWeb.Service;
+using SakilaWeb.ViewModel;
+using SakilaWeb.DB;
 
-namespace SakilaWeb.Controllers {
-    
+namespace SakilaWeb.Controllers
+{
+
     public class FilmController : Controller
     {
         private FilmService filmService;
-        public FilmController(FilmService filmService){
+        public FilmController(FilmService filmService)
+        {
             this.filmService = filmService;
         }
-        public IActionResult Index(){
+        public IActionResult Index()
+        {
             var userModel = new FilmViewModel();
             return View(userModel);
         }
 
         [HttpPost]
-        public IActionResult Index(FilmViewModel model){
-            
-            Film f = filmService.findById(int.Parse(model.codigo.ToString()));
-            if (f == null){
-                model.move = "Filme não Existe";
-            } 
-            else {
-                model.move = f.Title;
-            }            
-
+        public IActionResult Index(FilmViewModel model)
+        {
+            Film f = filmService.findById(model.codigo);
+            model.move = (f is null) ? "Filme não Existe" : f.Title;
             return View(model);
         }
-        public IActionResult List() {
-           
-                List<Film> filmsList = filmService.listAll();
-                return View(filmsList);
+        public IActionResult List()
+        {
+            List<Film> filmsList = filmService.listAll();
+            return View(filmsList);
+        }
+
+        public IActionResult CreateOrUpdate(CreateOrUpdateFilmViewModel viewModel){
+            return View();
         }
     }
 }

@@ -1,0 +1,19 @@
+@model SakilaWeb.ViewModel.CreateOrUpdateFilmViewModel
+
+<div class="container">
+    <from asp-controlers="Film" asp-action="CreateOrUpdate" methos="post" >
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" asp-for="Film.Title" />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea rows="4" cols="10" class="form-control" asp-for="Film.Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Release Year</label>
+            <input type="number" class="form-control" asp-for="Film.ReleaseYears" />
+        </div>
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </from>
+</div>

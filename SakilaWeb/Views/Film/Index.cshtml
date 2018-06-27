@@ -1,6 +1,7 @@
 @model SakilaWeb.Models.FilmViewModel
 
-<form asp-controller="Film" asp-action="Index" method="POST">
+<form asp-con
+troller="Film" asp-action="Index" method="POST">
     <div class="form-group">
         <label>Codigo</label>
         <input type="number" class="form-control" asp-for="codigo" />
@@ -10,8 +11,5 @@
         Resultado:
        
             <span>@Model.move</span>
-        
     </h4>
-
-    
 </form>
