@@ -12,6 +12,6 @@ namespace SakilaWeb.DB.Models {
         [Column("description")]
         public string Description {get;set;}
         [Column("release_year")]
-        public int? RealeaseYear {get;set;}
+        public int? ReleaseYear {get;set;}
     }
 }

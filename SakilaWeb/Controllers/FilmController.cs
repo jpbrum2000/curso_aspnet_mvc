@@ -36,6 +36,21 @@ namespace SakilaWeb.Controllers
             return View(filmsList);
         }
 
+        public IActionResult ListAll(FilmsListAllViewModel viewModel) {
+            
+            List<Film> filmsList = null;
+            
+            if(viewModel != null && viewModel.SearchId != null){
+                filmsList = new List<Film>();
+                filmsList.Add(filmService.findById((int)viewModel.SearchId));
+            }else{
+                filmsList = filmService.listAll();
+            }
+
+            viewModel.FilmsList = filmsList;
+            return View(viewModel);
+        }
+
         public IActionResult CreateOrUpdate(CreateOrUpdateFilmViewModel viewModel){
             return View();
         }
