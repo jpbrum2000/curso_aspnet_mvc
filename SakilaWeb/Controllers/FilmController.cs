@@ -51,8 +51,34 @@ namespace SakilaWeb.Controllers
             return View(viewModel);
         }
 
+
+        public IActionResult CreateOrUpdate(int? updateId){
+            if(updateId != null) {
+                Film film = filmService.findById((int)updateId);
+                return View(new CreateOrUpdateFilmViewModel(){ 
+                    Film = film
+                });
+            } else {
+                return View();
+            }
+        }
+
+        [HttpPost]
         public IActionResult CreateOrUpdate(CreateOrUpdateFilmViewModel viewModel){
-            return View();
+            if(viewModel != null && viewModel.Film != null) {
+                filmService.saveOrUpdate(viewModel.Film);
+                return RedirectToAction("ListAll");
+            } else {
+                return View();
+            }
+        }
+
+        public IActionResult Delete(int? id) {
+            if (id != null) {
+                filmService.delete(id);
+            }
+
+            return RedirectToAction("ListAll");
         }
     }
 }

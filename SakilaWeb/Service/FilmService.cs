@@ -33,5 +33,11 @@ namespace SakilaWeb.Service {
         public Film findById(int? id) {
             return dbContext.Films.Find(id);
         }
+
+        public void delete (int? id) {
+            Film film = new Film {Id = id};
+            dbContext.Remove(film);
+            dbContext.SaveChanges();
+        }
     }
 }

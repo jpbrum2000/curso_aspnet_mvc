@@ -63,7 +63,7 @@ namespace SakilaWeb
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Film}/{action=List}/{id?}");
+                    template: "{controller=Film}/{action=ListAll}/{id?}");
             });
         }
     }
