@@ -60,12 +60,12 @@ using SakilaWeb.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(41, 350, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd622882d34b48a38728594e2df506c9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2bedddeecb04cb4ace71fe1ba625a1d", async() => {
                 BeginContext(104, 71, true);
                 WriteLiteral("\r\n    <div class=\"form-group\">\r\n        <label>Codigo</label>\r\n        ");
                 EndContext();
                 BeginContext(175, 61, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "df3f542a0cbd4d42b37956b5cb99dba5", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9592aa7ea1bd4e57ba416033010897f7", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

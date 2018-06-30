@@ -10,7 +10,7 @@
 
 <a class="btn btn-default" asp-controller="Film" asp-action="CreateOrUpdate" >New Film</a>
 
-<table class="table">
+<!-- <table class="table">
     <thead>
         <tr>
             <th>Editar</th>
@@ -29,4 +29,33 @@
         </tr>
         }
     </tbody>
+</table> -->
+
+<table id="tblFilms" class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
 </table>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function(){
+            $.ajax("http://localhost:5000/api/films").done(function(filmList){
+                let table = $("#tblFilms")
+
+                for (let film of filmList) {
+                    var row = $("<tr></tr>").appendTo(table);
+                    $("<td></td>").text(film.id).appendTo(row);
+                    $("<td></td>").text(film.title).appendTo(row);
+                }
+
+            })
+        },4000);    
+    })
+</script>
