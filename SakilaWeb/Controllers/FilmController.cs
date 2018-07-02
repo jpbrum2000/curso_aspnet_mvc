@@ -80,5 +80,12 @@ namespace SakilaWeb.Controllers
 
             return RedirectToAction("ListAll");
         }
+
+        public IActionResult GetFilmsTable() {
+            List<Film> filmsList = filmService.listAll();
+            Url.Action("GetFilmsTable","Film",null);
+            return View(filmsList);
+            
+        }
     }
 }

@@ -31,7 +31,8 @@
     </tbody>
 </table> -->
 
-<table id="tblFilms" class="table">
+<!-- tabela utilizada para script que puxa os dados via REST -->
+<!-- <table id="tblFilms" class="table">
     <thead>
         <tr>
             <td>Id</td>
@@ -41,9 +42,10 @@
     <tbody>
 
     </tbody>
-</table>
+</table> -->
 
-<script type="text/javascript">
+<!-- script utilizado para puxar os dados via REST -->
+<!-- <script type="text/javascript">
     $(document).ready(function(){
         setTimeout(function(){
             $.ajax("http://localhost:5000/api/films").done(function(filmList){
@@ -58,4 +60,15 @@
             })
         },4000);    
     })
+</script> -->
+
+<div id="filmsTable">
+    <!-- usando SEM AJAX. somente para dividir melhor a estrutura de componentesd do MVC  -->
+    @Html.Partial("GetFilmsTable",Model.FilmsList)
+</div>
+
+<script type="text/javascript">
+    <!-- $(document).ready(function(){
+        $("#filmsTable").load('@Url.Action("GetFilmsTable","Film",null)')
+    }) -->
 </script>
