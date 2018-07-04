@@ -74,3 +74,4 @@ C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\SakilaWeb.csproj
 C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Film\CreateOrUpdate.g.cshtml.cs
 C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Film\ListAll.g.cshtml.cs
 C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Film\GetFilmsTable.g.cshtml.cs
+C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Users\Register.g.cshtml.cs

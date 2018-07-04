@@ -25,6 +25,7 @@
       "SakilaWeb/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.1.0",
           "Microsoft.NETCore.App": "2.1.0",
           "Pomelo.EntityFrameworkCore.MySql": "2.1.0-rc1-final"
         },

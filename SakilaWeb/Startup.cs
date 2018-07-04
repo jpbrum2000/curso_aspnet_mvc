@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SakilaWeb.DB;
 using SakilaWeb.Service;
+using SakilaWeb.Security;
+using Microsoft.AspNetCore.Identity;
 
 namespace SakilaWeb
 {
@@ -40,6 +42,16 @@ namespace SakilaWeb
             services.AddDbContext<SakilaDbContext>(options => options.UseMySql(Configuration.GetConnectionString("sakila")));
 
             services.AddScoped(typeof(FilmService));
+
+            services.AddIdentity<ApplicationUser,ApplicationRole>().AddEntityFrameworkStores<SakilaDbContext>();
+
+            services.Configure<IdentityOptions>(options => {
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.User.RequireUniqueEmail = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +70,8 @@ namespace SakilaWeb
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseIdentity();
 
             app.UseMvc(routes =>
             {

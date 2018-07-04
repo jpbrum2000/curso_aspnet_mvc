@@ -12030,6 +12030,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.1.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Pomelo.EntityFrameworkCore.MySql >= 2.1.0-rc1-final"
     ]
@@ -12041,11 +12042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\ADM\\curso_aspnet_mvc\\SakilaWeb\\SakilaWeb.csproj",
+      "projectUniqueName": "C:\\Users\\ADM\\curso_aspnet_mvc\\SakilaWeb\\SakilaWeb.csproj",
       "projectName": "SakilaWeb",
-      "projectPath": "c:\\Users\\ADM\\curso_aspnet_mvc\\SakilaWeb\\SakilaWeb.csproj",
+      "projectPath": "C:\\Users\\ADM\\curso_aspnet_mvc\\SakilaWeb\\SakilaWeb.csproj",
       "packagesPath": "C:\\Users\\ADM\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\ADM\\curso_aspnet_mvc\\SakilaWeb\\obj\\",
+      "outputPath": "C:\\Users\\ADM\\curso_aspnet_mvc\\SakilaWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12080,6 +12081,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
