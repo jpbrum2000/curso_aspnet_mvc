@@ -6,6 +6,7 @@ using SakilaWeb.Models;
 using SakilaWeb.Service;
 using SakilaWeb.ViewModel;
 using SakilaWeb.DB;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SakilaWeb.Controllers
 {
@@ -51,7 +52,7 @@ namespace SakilaWeb.Controllers
             return View(viewModel);
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult CreateOrUpdate(int? updateId){
             if(updateId != null) {
                 Film film = filmService.findById((int)updateId);
