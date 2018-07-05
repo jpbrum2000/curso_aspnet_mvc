@@ -71,7 +71,7 @@ namespace SakilaWeb
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseIdentity();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
