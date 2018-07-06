@@ -13,8 +13,8 @@ namespace SakilaWeb.Controllers
 
     public class FilmController : Controller
     {
-        private FilmService filmService;
-        public FilmController(FilmService filmService)
+        private IFilmService filmService;
+        public FilmController(IFilmService filmService)
         {
             this.filmService = filmService;
         }
@@ -47,7 +47,9 @@ namespace SakilaWeb.Controllers
             }else{
                 filmsList = filmService.listAll();
             }
-
+            if (viewModel == null) {
+                viewModel = new FilmsListAllViewModel();
+            }
             viewModel.FilmsList = filmsList;
             return View(viewModel);
         }

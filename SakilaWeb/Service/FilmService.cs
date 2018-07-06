@@ -5,7 +5,7 @@ using SakilaWeb.DB.Models;
 using System.Linq;
 
 namespace SakilaWeb.Service {
-    public class FilmService {
+    public class FilmService : IFilmService {
         private SakilaDbContext dbContext;
         public FilmService(SakilaDbContext dbContext){
             this.dbContext = dbContext;

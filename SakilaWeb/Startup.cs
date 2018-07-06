@@ -41,7 +41,7 @@ namespace SakilaWeb
 
             services.AddDbContext<SakilaDbContext>(options => options.UseMySql(Configuration.GetConnectionString("sakila")));
 
-            services.AddScoped(typeof(FilmService));
+            services.AddScoped(typeof(IFilmService),typeof(FilmService));
 
             services.AddIdentity<ApplicationUser,ApplicationRole>().AddEntityFrameworkStores<SakilaDbContext>();
 
