@@ -23,9 +23,23 @@ namespace SakilaTest {
             var controller = new FilmController(filmServiceMock.Object);
             var result = controller.ListAll(null);
 
-            var viewResult = (ViewResult) result;
-            var model = (FilmsListAllViewModel) viewResult.ViewData.Model;
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsType<FilmsListAllViewModel>(viewResult.ViewData.Model);
             Assert.Equal(1,model.FilmsList.Count);
+        }
+
+        [Fact]
+        public void testCreateOrUpdate()
+        {
+            var filmServiceMock = new Mock<IFilmService>();
+            filmServiceMock.Setup(filmService => filmService.saveOrUpdate(It.IsAny<Film>()));
+
+            var controller = new FilmController(filmServiceMock.Object);
+            var result = controller.CreateOrUpdate(new CreateOrUpdateFilmViewModel(){
+                Film = new Film(){Title = "Teste"}
+            });
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result); 
+            Assert.Equal("ListAll",redirectToActionResult.ActionName);
         }
     }
 }

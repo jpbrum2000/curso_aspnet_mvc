@@ -11,5 +11,7 @@ namespace SakilaWeb.DB
         base(options){ }
 
         public DbSet<Film> Films { get; set; }
+
+        public DbSet<City> Cities { get; set; }
     }
 }
