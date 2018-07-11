@@ -7,9 +7,9 @@ namespace SakilaWeb.DB.Models {
         [Key]
         [Column("country_id")]
         public int? Id {get;set;}
+        
         [Column("country")]
         public string CountryName {get;set;}
-        [Column("last_update")]
-        public string LastUpdate {get;set;}
+
     }
 }

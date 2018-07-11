@@ -14,6 +14,8 @@ using SakilaWeb.DB;
 using SakilaWeb.Service;
 using SakilaWeb.Security;
 using Microsoft.AspNetCore.Identity;
+using SakilaWeb.Middlewares;
+using Microsoft.Extensions.Options;
 
 namespace SakilaWeb
 {
@@ -73,6 +75,7 @@ namespace SakilaWeb
 
             app.UseAuthentication();
 
+            app.UseMiddleware<LoggerMiddleware>(new LoggerMiddlewareOptions());
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -83,6 +86,8 @@ namespace SakilaWeb
                         template:"{area:exists}/{controller=Home}/{action=Index}"
                     );
             });
+
+           
         }
     }
 }
