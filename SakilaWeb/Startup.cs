@@ -75,7 +75,9 @@ namespace SakilaWeb
 
             app.UseAuthentication();
 
-            app.UseMiddleware<LoggerMiddleware>(new LoggerMiddlewareOptions());
+            app.UseLoggerMiddleware(new LoggerMiddlewareOptions(){
+                FileName = "C:\\Users\\ADM\\AppData\\Local\\Temp\\sakila.log"
+            });
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
