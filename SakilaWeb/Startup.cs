@@ -78,6 +78,10 @@ namespace SakilaWeb
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Film}/{action=ListAll}/{id?}");
+                    routes.MapRoute(
+                        name: "areas",
+                        template:"{area:exists}/{controller=Home}/{action=Index}"
+                    );
             });
         }
     }

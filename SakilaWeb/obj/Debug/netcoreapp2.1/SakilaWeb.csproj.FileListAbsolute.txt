@@ -77,3 +77,5 @@ C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Film
 C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Users\Register.g.cshtml.cs
 C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Users\AssignUserToRole.g.cshtml.cs
 C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Views\Users\Login.g.cshtml.cs
+C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Areas\Area1\Views\Home\Index.g.cshtml.cs
+C:\Users\ADM\curso_aspnet_mvc\SakilaWeb\obj\Debug\netcoreapp2.1\Razor\Areas\Area2\Views\Home\Index.g.cshtml.cs
